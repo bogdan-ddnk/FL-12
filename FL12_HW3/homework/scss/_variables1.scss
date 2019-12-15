@@ -1,0 +1,51 @@
+
+//body
+$bodyBg: white;
+
+
+//Header
+//colors
+$headerBgImg: url(../img/m-h-day.jpg);
+$headerTextColor: #2C2F3C;
+$headerLinkColor: #FFFFFF;
+$headerFont: ('Hind', sans-serif);
+
+//button
+$btnBg: #699900;
+$btnBgHover: rgb(105,180,0);
+$btnColor: #F2F3E7;
+
+//logo
+$logoFont: ('Hind', sans-serif);
+
+//text background
+$textAfterBg: #14A0C7;
+
+
+
+//Content
+$sectionHeaderColor: #2C2F3C;
+$sectionCardBg: #21232E;
+$sectionCardTextColor: #C0C3CE;
+$sectionTextFont: ('Hind', sans-serif);
+
+
+//banner
+$bannerGradStart: #649412;
+$bannerGradEnd: #2D5BD7;
+$bannerHeadingColor: #2C2F3C;
+$bannerTextColor: #B7BEC1;
+
+
+
+//footer
+$footerBg: #21232E;
+$footerColor: #C0C3CE;
+$footerFont: ('Hind', sans-serif);
+
+
+$z-layers: (
+	default: 1,
+	banner: 2,
+	textHighline: -1
+);

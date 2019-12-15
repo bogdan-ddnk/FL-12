@@ -1,0 +1,53 @@
+
+//body
+$bodyBg: #21232E;
+
+
+//Header
+//colors
+$headerBgImg: url(../img/m-h-night.jpg);
+$headerTextColor: #FFFFFF;
+$headerLinkColor: #FFFFFF;
+$headerFont: ('Hind', sans-serif);
+
+//button
+$btnBg: #E3AC00;
+$btnBgHover: #a99040;
+$btnColor: #F2F3E7;
+
+//logo
+$logoFont: ('Fresca', sans-serif);
+
+//text background
+$textAfterBg: #FF4E33;
+
+
+
+//Content
+$sectionHeaderColor: white;
+$sectionCardBg: #3B3F50;
+$sectionCardTextColor: #BCC1CA;
+$sectionTextFont: ('Fresca', sans-serif);
+
+
+//banner
+$bannerGradStart: #DCA108;
+$bannerGradEnd: #922B53;
+$bannerHeadingColor: white;
+$bannerTextColor: #D1C593;
+
+
+
+//footer
+$footerBg: #3B3F50;
+$footerColor: #C0C3CE;
+$footerFont: ('Fresca', sans-serif);
+
+
+
+
+$z-layers: (
+	default: 1,
+	banner: 2,
+	textHighline: -1
+);

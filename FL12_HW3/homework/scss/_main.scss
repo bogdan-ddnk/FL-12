@@ -1,0 +1,300 @@
+// Write your styles here
+
+%button{
+	color: $btnColor;
+	float:left;
+	width:150px;
+	min-height: 30px;
+	background:$btnBg;
+	border: 0px solid green;
+	border-radius: 4px;
+	padding:12px;
+	font-weight:bolder;
+	font-size:18px;
+	line-height:20px;
+	overflow:hidden;
+	&:hover{
+		cursor:pointer;
+		background: $btnBgHover;
+	}
+}
+
+%logo{
+	display:flex;
+	align-items: center;
+	height:45px;
+	width: 20%;
+	font-family: $logoFont;
+	img{
+		float:left;
+		display:block;
+	}
+	p{
+		display:block;
+		padding:0;
+		margin:0;
+		width:80px;
+		text-align:center;
+		height:45px;
+		font-size:24px;
+		line-height:24px;
+		font-weight:bold;
+		span{
+			display:block;
+			font-size:10px;
+			line-height:19px;
+			width: 100%;
+			text-align: center;
+		}
+	}
+}
+
+
+@mixin text_background($height_px, $width_px, $bottom_indent_px, $left_indent_px, $background_color){
+	content: " ";
+	display: block;
+	margin:0;
+	padding:0;
+	background:$background_color;
+	position: relative;
+	z-index:-1;
+	height:$height_px;
+	width:$width_px;
+	bottom: $bottom_indent_px;
+	left: $left_indent_px;
+}
+
+
+
+// _functions.scss
+@function z($key) {
+  @if map-has-key($z-layers, $key) {
+    @return map-get($z-layers, $key);
+  }
+ 
+  @warn "Unknown `#{$key}` in $z-layers.";
+  @return null;
+}
+
+
+body{
+	width:100%;
+	height:100%;
+	padding: 0;
+	margin:0;
+	background-color: $bodyBg;
+}
+
+.header{
+	width:100%;
+	height:700px;
+	background: $headerBgImg 100% 100% no-repeat; 
+    background-size: cover; 
+	border-bottom-right-radius: 50em 17em;
+	background-origin: content-box;
+	background-position: top -275px left 0;
+	font-family: $headerFont;
+	.header-wrap{
+		width:80%;
+		margin-left: auto;
+		margin-right: auto;
+		padding:20px;
+		color: $headerTextColor;
+		.landing-logo{
+			@extend %logo;
+		}
+	}
+	.header-wrap div:last-child{
+		width:500px;
+		padding-top:20px;
+		
+		.header_button{
+			@extend %button;
+		}
+		
+		.login{
+			min-height: 30px;
+			float:right;
+			padding:12px;
+			color:$headerLinkColor;
+			font-weight:bolder;
+			font-size:18px;
+			line-height:20px;
+		}
+	}
+	.header_heading{
+		display:block;
+		overflow:hidden;
+		height: 144px;
+		width:500px;
+		font-weight:bolder;
+		font-size:72px;
+		line-height:72px;
+		position:relative;
+		z-index: z(default);
+		margin:0;
+		padding:0;
+		padding-top:80px;
+	}
+	.header_heading:after{
+		@include text_background(55px, 310px, 65px, -5px, $textAfterBg)
+	}
+	.header_text{
+		display:block;
+		padding:0;
+		white-space: pre-wrap;
+		text-align:left;
+		position:relative;
+		left: -45px;
+		
+	}
+}
+
+
+
+
+.section{
+	width:80%;
+	margin:auto;
+	padding-top:50px;
+	font-family: 'Hind', sans-serif;
+	.section_text{
+		display:block;
+		width: 450px;
+		height:40px;
+		margin:auto;
+		position:relative;
+		z-index: z(default);
+		text-align:center;
+		font-weight:bolder;
+		font-size:40px;
+		line-height:40px;
+		color: $sectionHeaderColor;
+	}
+	.section_text:after{
+		@include text_background(50px, 185px, 50px, 240px, $textAfterBg)
+	}
+	.section_card_wrap{
+		width:90%;
+		margin:auto;
+		padding-top:40px;
+		overflow:hidden;
+		.section_card{
+			display:flex;
+			width:80%;
+			height: 330px;
+			overflow:hidden;
+			margin:auto;
+			padding:20px;
+			margin-bottom:20px;
+			background: $sectionCardBg;
+			border: 1px solid $sectionCardBg;
+			border-radius: 10px;
+			.section_card_img{
+				width:50%;
+				float: left;
+				border-radius: 5px;
+			}
+			.section_card_right_container{
+				width:50%;
+				height:100%;
+				float:right;
+				text-align: center;
+				.section_card_heading{
+					color: white;
+					padding:30px;
+					font-size:20px;
+					font-weight:bold;
+				}
+				.section_card_text{
+					color: $sectionCardTextColor;
+					text-align: justify;
+					padding-left:20px;
+					font-family: $sectionTextFont;
+				}
+				.section_link{
+					color: $sectionCardTextColor;
+					display:block;
+					padding-top:30px;
+				}
+			}
+		}
+	}
+	.section_banner{
+		width:80%;
+		height: 125px;
+		background: linear-gradient(to right, $bannerGradStart, $bannerGradEnd);
+		border-radius: 10px;
+		margin:auto;
+		//margin-bottom:0;
+		position:relative;
+		bottom:-63px;
+		display:flex;
+		.section_banner_text_wrap{
+			padding:0;
+			margin:auto;
+			.section_banner_heading{
+				height:48px;
+				position:relative;
+				z-index: z(default);
+				color: $bannerHeadingColor;
+				font-weight:bold;
+				font-size:24px;
+				line-height:48px;
+				margin:0;
+				text-align:left;
+				
+			}
+			.section_banner_heading:after{
+				@include text_background(40px, 50px, 50px, 100px, $textAfterBg);
+				margin:0;
+			}
+			.section_banner_text{
+				margin:0;
+				text-align:left;
+				color: $bannerTextColor;
+			}
+		}
+		.section_banner_button{
+			@extend %button;
+			margin:auto;
+		}
+	}
+}
+
+
+
+
+
+//footer
+footer{
+	width:100%;
+	height: 250px;
+	background: $footerBg;
+	color: $footerColor;
+	overflow:hidden;
+	font-family: $footerFont;
+	.footer-wrap{
+		width:100%;
+		margin:auto;
+		display:flex;
+		margin-top:120px;
+		.footer_logo{
+			@extend %logo;
+			margin:auto;
+		}
+		.footer_text{
+			margin:auto;
+			width: 15%;
+			font-size:14px;
+		}
+		.footer-cr{
+			margin:auto;
+			text-align:center;
+			width:20%;
+		}
+	}
+	
+}
+
+
