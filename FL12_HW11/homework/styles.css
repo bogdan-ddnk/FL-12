@@ -1,0 +1,42 @@
+/* Todo: your styles go here*/
+
+p.file i:before {
+    content: "insert_drive_file";
+    color: #BBBBBB;
+}
+
+p.folder.folded+div {
+    display: none;
+}
+
+p.folder.folded i:before {
+    content: "folder";
+    color: #eabc0b;
+}
+
+p.folder i:before {
+    content: "folder_open";
+    color: #eabc0b;
+}
+
+.empty_folder {
+    font-style: italic;
+}
+
+#root div {
+    padding-left: 10px;
+}
+
+p:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+p {
+    margin: 0;
+    font-size: 20px;
+}
+
+.material-icons {
+    vertical-align: bottom;
+}
